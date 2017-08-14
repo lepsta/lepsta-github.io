@@ -1,0 +1,827 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <style type="text/css">
+    body {
+      position: relative; /* needed for scrollspy */
+    }
+    p {
+      text-align: left;
+    }
+    .section h2 {
+      padding-top: 2em;
+      padding-bottom: 1em;
+      text-align: center;
+    }
+    .odd.section {
+      background: #EFEFEF;
+    }
+    .padded {
+      padding: 20px;
+    }
+
+
+    .navbar {
+      background: rgba(255,255,255,1.00);
+      box-shadow: 0 0 4px 0 rgba(0,0,0,0.50);
+    }
+    .navbar-brand img {
+      height: 32px;
+    }
+    #banner {
+      background: #FFF url(./images/desk.jpg);
+      background-position: top;
+      background-size: 100%;
+      background-repeat: no-repeat;
+      text-align: center;
+      height: 100vh;
+    }
+    #banner header {
+      margin: auto auto;
+    }
+    #banner header p {
+      text-align: center;
+      color: #555;
+      padding: 0;
+      font-style: normal;
+      margin: 0;
+    }
+    #banner header h2 {
+      color: #315A97;
+      font-weight: normal;
+    }
+
+
+    #about {
+        background-image: linear-gradient(-180deg, rgba(98,149,201,1.00) 0%, rgba(51,92,152,1.00) 100%);
+        box-shadow: inset 0 4px 0 0 rgba(195,200,205,0.50);
+    }
+    #about-img {
+      min-height: 28vw;
+      /*min-height: 56vw;  keeps perspective - media query for small only */
+      box-shadow: inset 0 4px 0 0 rgba(195,200,205,0.50);
+      background: #FFF url(./images/about.jpg);
+      background-position: bottom;
+      background-size: 100%;
+      background-repeat: no-repeat;
+    }
+
+    #unique {
+      text-align: center;
+    }
+    .unique-block {
+      padding-top: 3em;
+    }
+    .unique-block h4 {
+      line-height: 2em;
+    }
+    .unique-block img {
+      height:80px;
+    }
+
+
+
+    #products {
+
+    }
+    #products img {
+      max-width:90%;
+    }
+    #products .row>div {
+      height: 150px;
+
+    }
+
+    .person {
+      text-align: center;
+    }
+    .person .subtitle {
+      font-style: italic;
+      padding-bottom: 2em;
+    }
+
+    #map {
+      padding-top: 3em;
+      padding-bottom: 3em;
+      background: url(./images/map.png);
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      box-shadow: inset 0 4px 0 0 rgba(195,200,205,0.50);
+    }
+    #map .popover {
+      box-shadow: 0 1px 10px 0 rgba(0,0,0,0.50);
+      position: relative;
+      max-width: 100%;
+    }
+    #mapbg {
+      position: absolute;
+      top:0;
+      left:0;
+      bottom:0;
+      right:0;
+    }
+    #map .container {
+      pointer-events: none;
+    }
+
+    #copyright {
+      padding: 2em;
+      color: #666;
+      font-size: 0.7em;
+      text-align: center;
+    }
+
+
+
+
+
+
+
+
+
+    #awards .container {
+   width: 80%;
+   padding: 50px 0;
+   margin: 50px auto;
+   position: relative;
+   overflow: hidden;
+}
+
+#awards .container:before {
+   content: '';
+   position: absolute;
+   top: 0;
+   left: 50%;
+   margin-left: -1px;
+   width: 2px;
+   height: 100%;
+   background: #CCD1D9;
+   z-index: 1
+}
+
+.timeline-block {
+   width: -webkit-calc(50% + 8px);
+   width: -moz-calc(50% + 8px);
+   width: calc(50% + 8px);
+   display: -webkit-box;
+   display: -webkit-flex;
+   display: -moz-box;
+   display: flex;
+   -webkit-box-pack: justify;
+   -webkit-justify-content: space-between;
+   -moz-box-pack: justify;
+   justify-content: space-between;
+   clear: both;
+}
+
+.timeline-block-right {
+   float: right;
+}
+
+.timeline-block-left {
+   float: left;
+   direction: rtl;
+}
+.timeline-block-left p {
+   text-align: right !important;
+   direction: ltr;
+}
+
+.marker {
+   width: 16px;
+   height: 16px;
+   border-radius: 50%;
+   border: 3px solid #355F9A;
+   box-shadow: 0 0 0 3px #fff;
+   background: #fff;
+   margin-top: 10px;
+   z-index: 99;
+}
+
+.timeline-content {
+   width: 95%;
+   padding: 0 15px;
+   color: #666
+}
+
+.timeline-content h3 {
+  color: #355F9A;
+  font-size: 20px;
+   margin-top: 7px;
+   margin-bottom: 5px;
+   /*font-size: 25px;*/
+   font-weight: 500
+}
+
+.timeline-content span {
+
+   
+   font-size: 1.5em;
+}
+
+.timeline-content p {
+   font-size: 14px;
+   line-height: 1.5em;
+   word-spacing: 1px;
+   color: #888;
+}
+
+
+@media screen and (max-width: 768px) {
+   #awards .container:before {
+      left: 8px;
+      width: 2px;
+   }
+   .timeline-block {
+      width: 100%;
+      margin-bottom: 30px;
+   }
+   .timeline-block-right {
+      float: none;
+   }
+
+  .timeline-block-left p {
+     text-align: left !important;
+  }
+   .timeline-block-left {
+      float: none;
+      direction: ltr;
+   }
+}
+
+    </style>
+  </head>
+  <body data-spy="scroll" data-target="#navbar">
+    
+    <nav id="navbar" class="navbar fixed-top navbar-toggleable-md navbar-light bg-faded">
+  <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <a class="navbar-brand" href="#banner"><img src="./images/lepsta.png" /></a>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="nav-link" href="#about">About</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#products">Products</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link " href="#awards">Accolades</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link " href="#team">The Team</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link " href="#map">Contact</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+    <div class="d-flex justify-content-center" id="banner">
+        <header>
+          <img src="./images/lepsta.png" height="64" />
+          <p>We are driven by a mission to become the</p>
+          <h2>Leading Entity in Professional Services and<br/>Technology Advancement</h2>
+        </header>
+    </div>
+
+    <div class="container-fluid section text-white" id="about">
+      <div class="row">
+      <div class="col-md-6">
+        <div class="padded">
+        <h2>About Us</h2>
+        <p>We live very demanding and high-paced lives in a world where the race to increase efficiency is always on. At Lepsta, we have dedicated ourselves to solving technological problems that help people be more effective in what they do in their daily lives.
+        </p><p>
+        We are driven by a mission to become the Leading Entity in Professional Services and Technology Advancement (LEPSTA). We believe that technology is now the biggest part of our lives. A force that has both the power to destroy us, but also the power to liberate us. We are obviously not thrilled about the former.
+        </p><p>
+        We understand that delivering meaningful services to customers demands pushing the boundaries. Which is why the advancement of technology (both by us and anyone else) is key in our view. Technology is a broad term however and that is why we decided to use Software Technology as a starting point. Following are a few products we’ve worked on to help people build software better and more affordably:
+        </p>
+        </div>
+      </div>
+      <div class="col-md-6" id="about-img">
+      </div>
+    </div>
+    </div>
+
+    <div class="container section" id="unique">
+      <h2>What Makes Us Unique</h2>
+      <div class="row">
+        <div class="unique-block col-lg-4 col-sm-6">
+          <h4>
+            <img src="./images/icons/info.png" ><br />
+            Start with WHY
+          </h4>
+          <p>
+            A simple but very crucial question. Asking “why?” is our guiding principle to everything we do. We scrutinize every idea or method to ensure the reason behind it is strong and valuable …read more 
+          </p>
+        </div>
+        
+        <div class="unique-block col-lg-4 col-sm-6">
+          <h4>
+            <img src="./images/icons/users.png" ><br />
+            Team
+          </h4>
+          <p>
+            We only look for people who want to be at Lepsta! This calls for a unique recruitment strategy. Instead of following the traditional role-based interviewing process, we engage in meaningful conversations with candidates …read more 
+          </p>
+        </div>
+        
+        <div class="unique-block col-lg-4 col-sm-6">
+          <h4>
+            <img src="./images/icons/medal.png" ><br />
+            Attitude
+          </h4>
+          <p>
+            In our pursuit of becoming a “LEPSTA”, we have learnt to adjust the way we look at the world. And our entire approach to problem solving. Instead of focusing on how others are solving certain problems, we follow a more scientific …read more.
+          </p>
+        </div>
+        
+        <div class="unique-block col-lg-4 col-sm-6">
+          <h4>
+            <img src="./images/icons/user-3.png" ><br />
+            Customer Centric
+          </h4>
+          <p>
+            We all love the thrill of building cool technology. But “cool” is irrelevant if you build something no one wants to use. Having learnt from our failures and successes, we have a process we refer to as “Customer Driven Development”…read more
+          </p>
+        </div>
+        
+        <div class="unique-block col-lg-4 col-sm-6">
+          <h4>
+            <img src="./images/icons/light-bulb.png" ><br />
+            Smart People and Freedom
+          </h4>
+          <p>
+            We have a small team with smart people who share the same vision as the rest of the company, and we set them free. We believe it to be pointless to hire someone you believe to be brilliant and tell them what to do …read more
+          </p>
+        </div>
+        
+        <div class="unique-block col-lg-4 col-sm-6">
+          <h4>
+            <img src="./images/icons/close.png" ><br />
+            We Embrace Failure
+          </h4>
+          <p>
+            We understand that we work on very ambitious projects, and that failure is highly likely. In fact more likely than success in most times. We believe that nothing life-changing ever begins with copying what others are doing …read more 
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="container-fluid section odd" id="products">
+      <h2>Products</h2>
+      <div class="container">
+        <div class="row d-flex justify-content-center">
+          <div class="col-sm-4">
+            <img src="./images/blackhole.png" />
+          </div>
+
+          <div class="col-sm-4">
+            <img src="./images/spacedecode.png" />
+          </div>
+
+          <div class="col-sm-4">
+            <img src="./images/engineone.png" />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container-fluid section" id="awards">
+      <h2>Achievements &amp; Awards</h2>
+
+
+      <div class="container">
+        
+        
+          <div class="timeline-block timeline-block-left">
+      <div class="marker"></div>
+      <div class="timeline-content">
+        <h3>2017</h3>
+        <span>The Technology Innovation Agency’s development fund</span>
+          <p>As its name suggests, the TIA only funds the development of the most innovative technologies in South Africa. It therefore came as no surprise that our technology was subject to months of technical due diligence. In February 2017 TIA awarded funding to Lepsta as part of their technology development fund for the development of EngineOne.
+          </p><p>
+We would like to thank the Technology Innovation Agency for making this possible.</p></div>
+</div>
+
+          <div class="timeline-block timeline-block-right">
+      <div class="marker"></div>
+      <div class="timeline-content">
+        <h3>2016</h3>
+        <span>Innovation Hub GAP ICT 2016 first place winner</span>
+          <p>The GAP (Gauteng Accelerator Program) competition is held every year to select the most deserving startups into the Innovation Hub’s incubation programmes. Lepsta was selected first and overall best in the ICT category walking away with the first prize trophy and some prize money.
+          </p><p>
+          We would like to thank The Innovation Hub for making this possible.</p>
+          </div>
+          </div>
+
+          <div class="timeline-block timeline-block-left">
+      <div class="marker"></div>
+      <div class="timeline-content">
+        <h3>2016</h3>
+        <span>Investec - En-novate Seattle Trip</span>
+          
+          <p>The Investec Bank partners with En-novate to select the most deserving South African startups in different categories to represent South Africa abroad. This helps startups grow their international network and launch their products / services internationally. In July 2016, Lepsta became one of only about a dozen startups in a South African delegate to Seattle, WA.
+          </p><p>
+          We would like to thank Investec Bank, En-novate and RSAWEB for making this possible.
+          </p>
+          </div>
+          </div>
+
+          <div class="timeline-block timeline-block-right">
+      <div class="marker"></div>
+      <div class="timeline-content">
+        <h3>2016</h3>
+        <span>GIST Bootcamp Finalist</span>
+          
+          <p>In 2016 we took part in a bootcamp organised by GIST in the partnership with US’s Department of State. From Algeria to Zimbabwe, almost every African country was represented by one or two startups. The bootcamp was followed by a pitching competition where Lepsta became one of 4 finalists among all African representatives. We did not go on to win the prize as there were more deserving startups on the day.
+          </p><p>
+          We would like to thank GIST, VentureWell, US Department of State, Climate Innovation Center, Open Innovation Exchange and Afrika Leadership Development Programme for the opportunity.
+          </p>
+          </div>
+          </div>
+
+          <div class="timeline-block timeline-block-left">
+      <div class="marker"></div>
+      <div class="timeline-content">
+        <h3>2015</h3>
+        <span>NetProphet Sparkup Semi Finalist</span>
+          
+          <p>NetProphet Sparkup is an annual startup conference held in Cape Town, South Africa. The attendants are selected from hundreds of applications to showcase they startups and pitch for investment to some of South Africa’s leading investors. Lepsta (quite early stage at the time) reached the semifinals of the pitching competition and was later approached by RSAWEB a South Africa based internet service provider who later became the company’s first seed investor.
+          </p><p>
+          We would like to thank Mlab Southern Africa, RSAWEB and NetProphet for such an incredible opportunity.
+          </p>
+          </div>
+          </div>
+
+
+          <div class="timeline-block timeline-block-right">
+      <div class="marker"></div>
+      <div class="timeline-content">
+        <h3>2013</h3>
+        <span>Incorporated</span>
+          </div>
+          </div>
+        
+
+      </div>
+    </div>
+
+    <div class="container-fluid section odd" id="team">
+      <h2>Team</h2>
+      <div class="container">
+      <div class="row">
+        <div class="person col-lg-4 col-sm-6">
+            <header>
+              <img src="./images/team/ProfilePicsSit.png" ><br />
+              <h4>Sithembiso Khumalo</h4>
+              <div class="subtitle">The Visionary</div>
+            </header>
+          <p>
+
+          </p>
+        </div>
+
+        <div class="person col-lg-4 col-sm-6">
+            <header>
+              <img src="./images/team/ProfilePicsSana.png" ><br />
+              <h4>Nkosana Mabuza</h4>
+              <div class="subtitle">The Champion</div>
+            </header>
+          <p>
+
+          </p>
+        </div>
+
+
+
+        <div class="person col-lg-4 col-sm-6">
+            <header>
+              <img src="./images/team/ProfilePicsGuid.png" ><br />
+              <h4>Guidione Machava</h4>
+              <div class="subtitle">The GUI</div>
+            </header>
+          <p>
+            
+          </p>
+        </div>
+
+        <div class="person col-lg-4 col-sm-6">
+            <header>
+              <img src="./images/team/ProfilePicsTim.png" ><br />
+              <h4>Timothy Solomon</h4>
+              <div class="subtitle">The Incredible Machine</div>
+            </header>
+          <p>
+            
+          </p>
+        </div>
+
+        <div class="person col-lg-4 col-sm-6">
+            <header>
+              <img src="./images/team/ProfilePicsGino.png" ><br />
+              <h4>Eugene Khumalo</h4>
+              <div class="subtitle">The Speaker</div>
+            </header>
+          <p>
+            
+          </p>
+        </div>
+
+        <div class="person col-lg-4 col-sm-6">
+            <header>
+              <img src="./images/team/ProfilePicsStep.png" ><br />
+              <h4>Stephen Boyd</h4>
+              <div class="subtitle">The <s>Ameri</s>Canadian</div>
+            </header>
+          <p>
+            
+          </p>
+        </div>
+
+      </div>
+      </div>
+    </div>
+
+    <div class="container-fluid section" id="map">
+      <div id="mapbg"></div>
+      <div class="container">
+        <div class="row">
+
+        <div class="popover popover-top card col-lg-4 col-sm-6">
+    <!-- <h3 class="popover-title">Contact Us</h3> -->
+    <div class="popover-content">
+      <h2>Contact Us</h2>
+            <p>
+            18 Uitzicht Park, Bellingham Street<br/>
+            Centurion, South Africa, 0157
+            </p><p>
+            <b>Phone:</b> +27 87 470 0309
+             </p><p>
+            <b>Email:</b> info@lepsta.com
+            </p>
+    </div>
+  </div>
+
+          <!-- <div class="card col-lg-6 col-sm-8">
+
+            <h2>Contact Us</h2>
+            <p>
+            18 Uitzicht Park, Bellingham Street<br/>
+            Centurion, South Africa, 0157
+            </p><p>
+            <b>Phone:</b> +27 87 470 0309
+             </p><p>
+            <b>Email:</b> info@lepsta.com
+            </p>
+          </div>
+ -->
+
+
+        </div>
+      </div>
+    </div>
+
+    <div class="container-fluid section odd" id="copyright">
+      <div>&copy; Lepsta (Pty) Ltd - All Rights Reserved</div>
+    </div>
+    <!-- jQuery first, then Tether, then Bootstrap JS. -->
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js" ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+
+    <script type="text/javascript">
+      $("#navbar a[href^='#']").on('click', function(e) {
+   // prevent default anchor click behavior
+   e.preventDefault();
+
+   // store hash
+   var hash = this.hash;
+
+   // animate
+   $('html, body').animate({
+       scrollTop: $(this.hash).offset().top
+     }, 300, function(){
+
+       // when done, add hash to url
+       // (default click behaviour)
+       window.location.hash = hash;
+     });
+
+});
+    </script>
+
+
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyArXoX1-8IrGW5ffSLWKfSMqpYKYU-QlwQ"></script>
+        
+        <script type="text/javascript">
+            // When the window has finished loading create our google map below
+            google.maps.event.addDomListener(window, 'load', init);
+        
+            function init() {
+                // Basic options for a simple Google Map
+                // For more options see: https://developers.google.com/maps/documentation/javascript/reference#MapOptions
+                var mapOptions = {
+                    // How zoomed in you want the map to start at (always required)
+                    zoom: 10,
+
+                    // The latitude and longitude to center the map (always required)
+                    center: new google.maps.LatLng(-25.9608206,27.8968822), // New York
+
+                    // How you would like to style the map. 
+                    // This is where you would paste any style found on Snazzy Maps.
+                    styles: [
+    {
+        "featureType": "all",
+        "elementType": "labels.text.fill",
+        "stylers": [
+            {
+                "color": "#ffffff"
+            }
+        ]
+    },
+    {
+        "featureType": "all",
+        "elementType": "labels.text.stroke",
+        "stylers": [
+            {
+                "color": "#000000"
+            },
+            {
+                "lightness": 13
+            }
+        ]
+    },
+    {
+        "featureType": "administrative",
+        "elementType": "geometry.fill",
+        "stylers": [
+            {
+                "color": "#000000"
+            }
+        ]
+    },
+    {
+        "featureType": "administrative",
+        "elementType": "geometry.stroke",
+        "stylers": [
+            {
+                "color": "#144b53"
+            },
+            {
+                "lightness": 14
+            },
+            {
+                "weight": 1.4
+            }
+        ]
+    },
+    {
+        "featureType": "landscape",
+        "elementType": "all",
+        "stylers": [
+            {
+                "color": "#08304b"
+            }
+        ]
+    },
+    {
+        "featureType": "poi",
+        "elementType": "geometry",
+        "stylers": [
+            {
+                "color": "#0c4152"
+            },
+            {
+                "lightness": 5
+            }
+        ]
+    },
+    {
+        "featureType": "road.highway",
+        "elementType": "geometry.fill",
+        "stylers": [
+            {
+                "color": "#000000"
+            }
+        ]
+    },
+    {
+        "featureType": "road.highway",
+        "elementType": "geometry.stroke",
+        "stylers": [
+            {
+                "color": "#0b434f"
+            },
+            {
+                "lightness": 25
+            }
+        ]
+    },
+    {
+        "featureType": "road.highway",
+        "elementType": "labels",
+        "stylers": [
+            {
+                "visibility": "off"
+            }
+        ]
+    },
+    {
+        "featureType": "road.arterial",
+        "elementType": "geometry.fill",
+        "stylers": [
+            {
+                "color": "#000000"
+            }
+        ]
+    },
+    {
+        "featureType": "road.arterial",
+        "elementType": "geometry.stroke",
+        "stylers": [
+            {
+                "color": "#0b3d51"
+            },
+            {
+                "lightness": 16
+            }
+        ]
+    },
+    {
+        "featureType": "road.arterial",
+        "elementType": "labels",
+        "stylers": [
+            {
+                "visibility": "off"
+            }
+        ]
+    },
+    {
+        "featureType": "road.local",
+        "elementType": "geometry",
+        "stylers": [
+            {
+                "color": "#000000"
+            }
+        ]
+    },
+    {
+        "featureType": "road.local",
+        "elementType": "labels",
+        "stylers": [
+            {
+                "visibility": "off"
+            }
+        ]
+    },
+    {
+        "featureType": "transit",
+        "elementType": "all",
+        "stylers": [
+            {
+                "color": "#146474"
+            }
+        ]
+    },
+    {
+        "featureType": "water",
+        "elementType": "all",
+        "stylers": [
+            {
+                "color": "#021019"
+            }
+        ]
+    }
+]
+                };
+
+                // Get the HTML DOM element that will contain your map 
+                // We are using a div with id="map" seen below in the <body>
+                var mapElement = document.getElementById('mapbg');
+
+                // Create the Google Map using our element and options defined above
+                var map = new google.maps.Map(mapElement, mapOptions);
+
+                // Let's also add a marker while we're at it
+                var marker = new google.maps.Marker({
+                    position: new google.maps.LatLng(-25.8681804,28.1935131),
+                    map: map,
+                    title: 'Lepsta'
+                });
+            }
+        </script>
+
+
+  </body>
+</html>
