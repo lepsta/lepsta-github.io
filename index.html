@@ -7,9 +7,16 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,600" rel="stylesheet">
+    <!-- <link href="https://fonts.googleapis.com/css?family=Courgette" rel="stylesheet"> -->
+
     <style type="text/css">
     body {
       position: relative; /* needed for scrollspy */
+      font-family: "Montserrat", sans-serif;
+      font-weight: 300;
+      line-height: 1.8em;
     }
     p {
       text-align: left;
@@ -35,26 +42,38 @@
       height: 32px;
     }
     #banner {
+      position: relative;
       background: #FFF url(./images/desk.jpg);
-      background-position: top;
+      background-position: 0 10px;
       background-size: 100%;
       background-repeat: no-repeat;
       text-align: center;
       height: 100vh;
     }
     #banner header {
+      padding-top: 10vw;
+      padding-left: 20px;
+      padding-right: 20px;
       margin: auto auto;
-    }
-    #banner header p {
-      text-align: center;
-      color: #555;
-      padding: 0;
-      font-style: normal;
-      margin: 0;
+      /*position: absolute;
+      bottom: 20vh;*/
     }
     #banner header h2 {
       color: #315A97;
       font-weight: normal;
+      font-size: 3vw;
+      line-height: 1.5em;
+    }
+    #banner header h2.gray {
+      color: #555;
+    }
+    #banner header h2 b {
+      font-weight: 600;
+    }
+    @media screen and (max-width: 768px) {
+      #banner header h2 {
+        font-size: 1.5rem;
+      }
     }
 
 
@@ -63,13 +82,18 @@
         box-shadow: inset 0 4px 0 0 rgba(195,200,205,0.50);
     }
     #about-img {
-      min-height: 28vw;
+      min-height: 45vw;
       /*min-height: 56vw;  keeps perspective - media query for small only */
       box-shadow: inset 0 4px 0 0 rgba(195,200,205,0.50);
       background: #FFF url(./images/about.jpg);
       background-position: bottom;
       background-size: 100%;
       background-repeat: no-repeat;
+    }
+    @media screen and (max-width: 768px) {
+      #about-img {
+        min-height: 95vw;
+      }
     }
 
     #unique {
@@ -102,8 +126,11 @@
       text-align: center;
     }
     .person .subtitle {
+      /*font-family: "Courgette", cursive;
+      font-size: 1.2em;*/
       font-style: italic;
       padding-bottom: 2em;
+      color: rgba(1,1,1,0.6);
     }
 
     #map {
@@ -289,9 +316,9 @@
 
     <div class="d-flex justify-content-center" id="banner">
         <header>
-          <img src="./images/lepsta.png" height="64" />
-          <p>We are driven by a mission to become the</p>
-          <h2>Leading Entity in Professional Services and<br/>Technology Advancement</h2>
+          <div style="width: 57px; overflow: hidden; margin: auto;"><img src="./images/lepsta.png" height="64" /></div><br/>
+          <h2 class="gray">We are driven by a mission to become the</h2>
+          <h2><b>L</b>eading <b>E</b>ntity in <b>P</b>rofessional <b>S</b>ervices and<br/><b>T</b>echnology <b>A</b>dvancement</h2>
         </header>
     </div>
 
@@ -322,7 +349,7 @@
             Start with WHY
           </h4>
           <p>
-            A simple but very crucial question. Asking “why?” is our guiding principle to everything we do. We scrutinize every idea or method to ensure the reason behind it is strong and valuable …read more 
+            A simple but very crucial question. Asking “why?” is our guiding principle to everything we do. We scrutinize every idea or method to ensure the reason behind it is strong and valuable.
           </p>
         </div>
         
@@ -332,7 +359,7 @@
             Team
           </h4>
           <p>
-            We only look for people who want to be at Lepsta! This calls for a unique recruitment strategy. Instead of following the traditional role-based interviewing process, we engage in meaningful conversations with candidates …read more 
+            We only look for people who want to be at Lepsta! This calls for a unique recruitment strategy. Instead of following the traditional role-based interviewing process, we engage in meaningful conversations with candidates.
           </p>
         </div>
         
@@ -342,7 +369,7 @@
             Attitude
           </h4>
           <p>
-            In our pursuit of becoming a “LEPSTA”, we have learnt to adjust the way we look at the world. And our entire approach to problem solving. Instead of focusing on how others are solving certain problems, we follow a more scientific …read more.
+            In our pursuit of becoming a “LEPSTA”, we have learnt to adjust the way we look at the world. And our entire approach to problem solving. Instead of focusing on how others are solving certain problems, we follow a more scientific process.
           </p>
         </div>
         
@@ -352,7 +379,7 @@
             Customer Centric
           </h4>
           <p>
-            We all love the thrill of building cool technology. But “cool” is irrelevant if you build something no one wants to use. Having learnt from our failures and successes, we have a process we refer to as “Customer Driven Development”…read more
+            We all love the thrill of building cool technology. But “cool” is irrelevant if you build something no one wants to use. Having learnt from our failures and successes, we have a process we refer to as “Customer Driven Development”.
           </p>
         </div>
         
@@ -362,7 +389,7 @@
             Smart People and Freedom
           </h4>
           <p>
-            We have a small team with smart people who share the same vision as the rest of the company, and we set them free. We believe it to be pointless to hire someone you believe to be brilliant and tell them what to do …read more
+            We have a small team with smart people who share the same vision as the rest of the company, and we set them free. We believe it to be pointless to hire someone you believe to be brilliant and tell them what to do.
           </p>
         </div>
         
@@ -372,7 +399,7 @@
             We Embrace Failure
           </h4>
           <p>
-            We understand that we work on very ambitious projects, and that failure is highly likely. In fact more likely than success in most times. We believe that nothing life-changing ever begins with copying what others are doing …read more 
+            We understand that we work on very ambitious projects, and that failure is highly likely. In fact, more likely than success, in most cases. We believe that nothing life-changing ever begins with copying what others are doing.
           </p>
         </div>
       </div>
@@ -485,6 +512,7 @@ We would like to thank the Technology Innovation Agency for making this possible
             <header>
               <img src="./images/team/ProfilePicsSit.png" ><br />
               <h4>Sithembiso Khumalo</h4>
+              <h6>(CEO / CTO)</h6>
               <div class="subtitle">The Visionary</div>
             </header>
           <p>
@@ -496,6 +524,7 @@ We would like to thank the Technology Innovation Agency for making this possible
             <header>
               <img src="./images/team/ProfilePicsSana.png" ><br />
               <h4>Nkosana Mabuza</h4>
+              <h6>(CFO)</h6>
               <div class="subtitle">The Champion</div>
             </header>
           <p>
@@ -509,6 +538,7 @@ We would like to thank the Technology Innovation Agency for making this possible
             <header>
               <img src="./images/team/ProfilePicsGuid.png" ><br />
               <h4>Guidione Machava</h4>
+              <h6>(UX Designer)</h6>
               <div class="subtitle">The GUI</div>
             </header>
           <p>
@@ -520,6 +550,7 @@ We would like to thank the Technology Innovation Agency for making this possible
             <header>
               <img src="./images/team/ProfilePicsTim.png" ><br />
               <h4>Timothy Solomon</h4>
+              <h6>(Software Engineer)</h6>
               <div class="subtitle">The Incredible Machine</div>
             </header>
           <p>
@@ -531,6 +562,7 @@ We would like to thank the Technology Innovation Agency for making this possible
             <header>
               <img src="./images/team/ProfilePicsGino.png" ><br />
               <h4>Eugene Khumalo</h4>
+              <h6>(Software Engineer)</h6>
               <div class="subtitle">The Speaker</div>
             </header>
           <p>
@@ -542,6 +574,7 @@ We would like to thank the Technology Innovation Agency for making this possible
             <header>
               <img src="./images/team/ProfilePicsStep.png" ><br />
               <h4>Stephen Boyd</h4>
+              <h6>(Software Engineer)</h6>
               <div class="subtitle">The <s>Ameri</s>Canadian</div>
             </header>
           <p>
