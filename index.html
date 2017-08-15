@@ -8,13 +8,13 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
 
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,600" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,600" rel="stylesheet">
     <!-- <link href="https://fonts.googleapis.com/css?family=Courgette" rel="stylesheet"> -->
 
     <style type="text/css">
     body {
       position: relative; /* needed for scrollspy */
-      font-family: "Montserrat", sans-serif;
+      font-family: "Roboto", sans-serif;
       font-weight: 300;
       line-height: 1.8em;
     }
@@ -206,6 +206,9 @@
    -moz-box-pack: justify;
    justify-content: space-between;
    clear: both;
+   z-index: 3;
+   position: relative;
+
 }
 
 .timeline-block-right {
@@ -524,7 +527,7 @@ We would like to thank the Technology Innovation Agency for making this possible
             <header>
               <img src="./images/team/ProfilePicsSana.png" ><br />
               <h4>Nkosana Mabuza</h4>
-              <h6>(CFO)</h6>
+              <h6>(COO)</h6>
               <div class="subtitle">The Champion</div>
             </header>
           <p>
@@ -633,6 +636,8 @@ We would like to thank the Technology Innovation Agency for making this possible
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
 
+    <script src="https://unpkg.com/scrollreveal/dist/scrollreveal.min.js"></script>
+
     <script type="text/javascript">
       $("#navbar a[href^='#']").on('click', function(e) {
    // prevent default anchor click behavior
@@ -652,6 +657,14 @@ We would like to thank the Technology Innovation Agency for making this possible
      });
 
 });
+
+
+
+      // reveal.js
+window.sr = ScrollReveal();
+sr.reveal('.timeline-block',{scale: 1, duration: 1000, delay: 500});
+sr.reveal('.person img', {distance: '0px', duration: 700, delay: 100})
+
     </script>
 
 
