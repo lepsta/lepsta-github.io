@@ -5,6 +5,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+    <link rel="shortcut icon" href="favicon-48x48.png" />
+    <link rel="icon" href="favicon-48x48.png" type="image/x-icon">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
 
@@ -25,22 +27,50 @@
       padding-top: 2em;
       padding-bottom: 1em;
       text-align: center;
+      text-transform: uppercase;
     }
     .odd.section {
       background: #EFEFEF;
     }
     .padded {
-      padding: 20px;
+      padding-left: 40px;
+      padding-right: 40px;
     }
 
 
     .navbar {
       background: rgba(255,255,255,1.00);
       box-shadow: 0 0 4px 0 rgba(0,0,0,0.50);
+      text-transform: uppercase;
+
+      
     }
     .navbar-brand img {
+      height: 64px;
+      -webkit-transition: all 0.5s ease;
+      transition: all 0.5s ease;
+    }
+    .shrink .navbar-brand img {
       height: 32px;
     }
+    @media (max-width: 768px) {
+      .navbar-brand img {
+        height: 32px;
+      }
+    }
+    .navbar-nav {
+      text-align: right;
+    }
+    .navbar-toggler {
+      border: 0;
+    }
+    /* make sure it doesnt squash on mobile */
+    @media (max-width: 576px) {
+      .navbar .container {
+          width: 100%;
+      }
+    }
+
     #banner {
       position: relative;
       background: #FFF url(./images/desk.jpg);
@@ -60,8 +90,8 @@
     }
     #banner header h2 {
       color: #315A97;
-      font-weight: normal;
-      font-size: 3vw;
+      font-weight: 300;
+      font-size: 2.5vw;
       line-height: 1.5em;
     }
     #banner header h2.gray {
@@ -81,6 +111,29 @@
         background-image: linear-gradient(-180deg, rgba(98,149,201,1.00) 0%, rgba(51,92,152,1.00) 100%);
         box-shadow: inset 0 4px 0 0 rgba(195,200,205,0.50);
     }
+    #about h2 {
+      text-align: left;
+    }
+    @media (min-width: 768px) {
+      #about .container {
+          width: 360px;
+          float: right;
+      }
+    }
+    @media (min-width: 992px) {
+      #about .container {
+          width: 470px;
+          float: right;
+      }
+    }
+    @media (min-width: 1200px) {
+      #about .container {
+          width: 558px;
+          float: right;
+      }
+    }
+
+
     #about-img {
       min-height: 45vw;
       /*min-height: 56vw;  keeps perspective - media query for small only */
@@ -291,13 +344,16 @@
   <body data-spy="scroll" data-target="#navbar">
     
     <nav id="navbar" class="navbar fixed-top navbar-toggleable-md navbar-light bg-faded">
+
+    <div class="container">
   <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
+  
   <a class="navbar-brand" href="#banner"><img src="./images/lepsta.png" /></a>
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
+    <ul class="navbar-nav ml-auto">
       <li class="nav-item">
         <a class="nav-link" href="#about">About</a>
       </li>
@@ -315,20 +371,20 @@
       </li>
     </ul>
   </div>
+  </div>
 </nav>
 
     <div class="d-flex justify-content-center" id="banner">
         <header>
-          <div style="width: 57px; overflow: hidden; margin: auto;"><img src="./images/lepsta.png" height="64" /></div><br/>
           <h2 class="gray">We are driven by a mission to become the</h2>
-          <h2><b>L</b>eading <b>E</b>ntity in <b>P</b>rofessional <b>S</b>ervices and<br/><b>T</b>echnology <b>A</b>dvancement</h2>
+          <h2>Leading Entity in Professional Services and<br/>Technology Advancement</h2>
         </header>
     </div>
 
     <div class="container-fluid section text-white" id="about">
       <div class="row">
       <div class="col-md-6">
-        <div class="padded">
+        <div class="container">
         <h2>About Us</h2>
         <p>We live very demanding and high-paced lives in a world where the race to increase efficiency is always on. At Lepsta, we have dedicated ourselves to solving technological problems that help people be more effective in what they do in their daily lives.
         </p><p>
@@ -658,7 +714,10 @@ We would like to thank the Technology Innovation Agency for making this possible
 
 });
 
-
+// make smaller on scroll
+$(window).on("scroll", function() {
+    $("nav").toggleClass("shrink", $(this).scrollTop() > 50)
+});
 
       // reveal.js
 window.sr = ScrollReveal();
