@@ -23,11 +23,18 @@
     p {
       text-align: left;
     }
+    .section  {
+    }
     .section h2 {
       padding-top: 2em;
       padding-bottom: 1em;
+      font-size: 1.6em;
       text-align: center;
       text-transform: uppercase;
+      text-shadow: white 0 1px;
+    }
+    .section h4 {
+      font-size: 1.25rem;
     }
     .odd.section {
       background: #EFEFEF;
@@ -42,13 +49,17 @@
       background: rgba(255,255,255,1.00);
       box-shadow: 0 0 4px 0 rgba(0,0,0,0.50);
       text-transform: uppercase;
-
       
+      -webkit-transition: all 0.5s ease;
+      transition: all 0.5s ease;
     }
     .navbar-brand img {
       height: 64px;
       -webkit-transition: all 0.5s ease;
       transition: all 0.5s ease;
+    }
+    .navbar.shrink {
+      padding: 0;
     }
     .shrink .navbar-brand img {
       height: 32px;
@@ -60,6 +71,23 @@
     }
     .navbar-nav {
       text-align: right;
+    }
+    /*.nav-link.active:before {
+       content: '';
+       position: absolute;
+       background-color: blue;
+       width: 100px;
+       height: 3px;
+    }*/
+    .nav-link {
+      border-bottom: 2px solid white;
+      -webkit-transition: all 0.5s ease;
+      transition: all 0.5s ease;
+    }
+    @media (min-width: 768px) {
+      .nav-link.active {
+        border-bottom: 2px solid #315A97;
+      }
     }
     .navbar-toggler {
       border: 0;
@@ -113,6 +141,7 @@
     }
     #about h2 {
       text-align: left;
+      text-shadow: none;
     }
     @media (min-width: 768px) {
       #about .container {
@@ -159,7 +188,8 @@
       line-height: 2em;
     }
     .unique-block img {
-      height:80px;
+      height:60px;
+      margin-bottom: 15px;
     }
 
 
@@ -177,6 +207,10 @@
 
     .person {
       text-align: center;
+    }
+    .person img {
+      height: 170px;
+      margin-bottom: 15px;
     }
     .person .subtitle {
       /*font-family: "Courgette", cursive;
@@ -343,7 +377,7 @@
   </head>
   <body data-spy="scroll" data-target="#navbar">
     
-    <nav id="navbar" class="navbar fixed-top navbar-toggleable-md navbar-light bg-faded">
+    <nav id="navbar" class="navbar fixed-top navbar-toggleable-sm navbar-light bg-faded">
 
     <div class="container">
   <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -390,7 +424,8 @@
         </p><p>
         We are driven by a mission to become the Leading Entity in Professional Services and Technology Advancement (LEPSTA). We believe that technology is now the biggest part of our lives. A force that has both the power to destroy us, but also the power to liberate us. We are obviously not thrilled about the former.
         </p><p>
-        We understand that delivering meaningful services to customers demands pushing the boundaries. Which is why the advancement of technology (both by us and anyone else) is key in our view. Technology is a broad term however and that is why we decided to use Software Technology as a starting point. Following are a few products we’ve worked on to help people build software better and more affordably:
+        We understand that delivering meaningful services to customers demands pushing the boundaries. Which is why the advancement of technology (both by us and anyone else) is key in our view. Technology is a broad term however and that is why we decided to use Software Technology as a starting point. <!--Following are a few products we’ve worked on to help people build software better and more affordably:-->
+        <br/>
         </p>
         </div>
       </div>
@@ -445,7 +480,7 @@
         <div class="unique-block col-lg-4 col-sm-6">
           <h4>
             <img src="./images/icons/light-bulb.png" ><br />
-            Smart People and Freedom
+            Smart People &amp; Freedom
           </h4>
           <p>
             We have a small team with smart people who share the same vision as the rest of the company, and we set them free. We believe it to be pointless to hire someone you believe to be brilliant and tell them what to do.
@@ -699,6 +734,9 @@ We would like to thank the Technology Innovation Agency for making this possible
    // prevent default anchor click behavior
    e.preventDefault();
 
+   // hide menu
+    $('.navbar-collapse').collapse('hide');
+
    // store hash
    var hash = this.hash;
 
@@ -715,6 +753,7 @@ We would like to thank the Technology Innovation Agency for making this possible
 });
 
 // make smaller on scroll
+$("nav").toggleClass("shrink", $(this).scrollTop() > 50);
 $(window).on("scroll", function() {
     $("nav").toggleClass("shrink", $(this).scrollTop() > 50)
 });
