@@ -5,8 +5,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <link rel="shortcut icon" href="favicon-48x48.png" />
-    <link rel="icon" href="favicon-48x48.png" type="image/x-icon">
+    <link rel="shortcut icon" href="favicon.png" />
+    <link rel="icon" href="favicon.png" type="image/x-icon">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
 
@@ -18,7 +18,9 @@
       position: relative; /* needed for scrollspy */
       font-family: "Roboto", sans-serif;
       font-weight: 300;
-      line-height: 1.8em;
+      /*line-height: 1.8em;*/
+      color: #666;
+      font-size: 14px;
     }
     p {
       text-align: left;
@@ -32,6 +34,7 @@
       text-align: center;
       text-transform: uppercase;
       text-shadow: white 0 1px;
+      color: #444;
     }
     .section h4 {
       font-size: 1.25rem;
@@ -80,13 +83,13 @@
        height: 3px;
     }*/
     .nav-link {
-      border-bottom: 2px solid white;
+      border-top: 2px solid white;
       -webkit-transition: all 0.5s ease;
       transition: all 0.5s ease;
     }
     @media (min-width: 768px) {
       .nav-link.active {
-        border-bottom: 2px solid #315A97;
+        border-top: 2px solid #315A97;
       }
     }
     .navbar-toggler {
@@ -119,18 +122,19 @@
     #banner header h2 {
       color: #315A97;
       font-weight: 300;
-      font-size: 2.5vw;
+      font-size: 2.6vw;
       line-height: 1.5em;
     }
     #banner header h2.gray {
       color: #555;
+      font-size: 2.3vw;
     }
     #banner header h2 b {
       font-weight: 600;
     }
     @media screen and (max-width: 768px) {
       #banner header h2 {
-        font-size: 1.5rem;
+        font-size: 1.5rem !important;
       }
     }
 
@@ -142,6 +146,7 @@
     #about h2 {
       text-align: left;
       text-shadow: none;
+      color: white;
     }
     @media (min-width: 768px) {
       #about .container {
@@ -229,10 +234,11 @@
       background-repeat: no-repeat;
       box-shadow: inset 0 4px 0 0 rgba(195,200,205,0.50);
     }
-    #map .popover {
+    #map .contactcard {
       box-shadow: 0 1px 10px 0 rgba(0,0,0,0.50);
       position: relative;
       max-width: 100%;
+      background: white;
     }
     #mapbg {
       position: absolute;
@@ -325,7 +331,7 @@
 .timeline-content {
    width: 95%;
    padding: 0 15px;
-   color: #666
+   /*color: #666*/
 }
 
 .timeline-content h3 {
@@ -344,7 +350,7 @@
 }
 
 .timeline-content p {
-   font-size: 14px;
+   /*font-size: 14px;*/
    line-height: 1.5em;
    word-spacing: 1px;
    color: #888;
@@ -685,9 +691,9 @@ We would like to thank the Technology Innovation Agency for making this possible
       <div class="container">
         <div class="row">
 
-        <div class="popover popover-top card col-lg-4 col-sm-6">
+        <div class="contactcard col-lg-4 col-sm-6">
     <!-- <h3 class="popover-title">Contact Us</h3> -->
-    <div class="popover-content">
+    <div class="">
       <h2>Contact Us</h2>
             <p>
             18 Uitzicht Park, Bellingham Street<br/>
